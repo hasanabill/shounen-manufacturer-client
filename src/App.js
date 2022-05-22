@@ -1,9 +1,21 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Home from './Components/Home/Home';
+import Login from './Components/Login/Login';
+import Header from './Components/Shared/Header';
 
 function App() {
   return (
     <div>
-      <h1 className='text-3xl text-red-600 font-bold'>Hello World</h1>
+      <Header></Header>
+      <Routes>
+        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/' ></Route>
+        <Route path='/' ></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/' ></Route>
+      </Routes>
     </div>
   );
 }
