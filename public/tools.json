@@ -2,55 +2,73 @@
     {
         "brand": "CAPRI TOOLS",
         "name": "6-Piece Handle Set Torx Multi-bit Screwdriver Set",
-        "price": "23",
+        "price": 23,
+        "minimum": 50,
+        "available": 300,
         "img": "https://i.ibb.co/Bf9gfS1/image.png"
     },
     {
         "brand": "IRWIN",
         "name": "Visegrip Quick Adjusting GrooveLock 2-Pack Tongue & Groove Plier Set",
-        "price": "20",
+        "price": 20,
+        "minimum": 50,
+        "available": 300,
         "img": "https://i.ibb.co/Q6qn6wp/image.png"
     },
     {
         "brand": "KOBALT",
         "name": "3-Pack Locking Plier Set",
-        "price": "16",
+        "price": 16,
+        "minimum": 50,
+        "available": 300,
         "img": "https://i.ibb.co/5LvzbPT/image.png"
     },
     {
         "brand": "CRAFTSMAN",
         "name": "22-Piece 72-Tooth 3/8-in Drive Quick-release Standard Ratchet Set",
-        "price": "54",
+        "price": 54,
+        "minimum": 50,
+        "available": 300,
         "img": "https://i.ibb.co/w4DWG6s/image.png"
     },
     {
         "brand": "URREA",
         "name": "19-Piece Bi-material Handle Set Screwdriver Set",
-        "price": "29",
+        "price": 29,
+        "minimum": 50,
+        "available": 300,
         "img": "https://i.ibb.co/RT5vTxD/image.png"
     },
     {
         "brand": "KOBALT",
         "name": "Tape measures 25-ft Auto Lock Tape Measure",
-        "price": "8",
+        "price": 8,
+        "minimum": 50,
+        "available": 300,
         "img": "https://i.ibb.co/dpmG5H3/image.png"
     },
     {
         "brand": "CRAFTSMAN",
         "name": "PROREACH 35-ft Tape Measure",
-        "price": "34",
+        "price": 34,
+        "minimum": 50,
+        "available": 300,
         "img": "https://i.ibb.co/w4zf1L8/image.png"
     },
     {
         "brand": "CRAFTSMAN",
         "name": "7-Piece Set 12-Point Standard (SAE) Flexible Head Ratchet Wrench Set",
-        "price": "23",
+        "price": 23,
+        "minimum": 50,
+        "available": 300,
         "img": "https://i.ibb.co/XzhFKvK/image.png"
     },
     {
         "brand": "KOBALT",
         "name": "267-Piece Household Tool Set with Soft Case",
-        "price": "129",
+        "price": 129,
+        "minimum": 50,
+        "available": 300,
         "img": "https://i.ibb.co/2n5X6qh/image.png"
     }
 ]

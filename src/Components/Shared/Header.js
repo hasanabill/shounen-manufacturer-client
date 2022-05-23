@@ -1,18 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
+    const [user] = useAuthState(auth)
     const navItems = <>
         <li><Link to='/home'>Home</Link></li>
-        <li><Link to='/appoinment'>Appoinment</Link></li>
-        <li><Link to='/review'>Review</Link></li>
+        <li><Link to='/shop'>Shop</Link></li>
+        <li><Link to='/blogs'>Blogs</Link></li>
         <li><Link to='/contact'>Contact</Link></li>
         <li><Link to='/about'>About</Link></li>
     </>
 
     return (
         <div className=''>
-            <div className="navbar lg:px-10 bg-gray-800 text-white">
+            <div className="navbar lg:px-10 bg-primary text-gray-800">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -30,7 +34,21 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to='/login' className="btn ">Login</Link>
+                    {user ?
+                        <div class="dropdown dropdown-end">
+                            <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                                <div class="w-10 rounded-full">
+                                    <img src={user.photoURL} alt='' />
+                                </div>
+                            </label>
+                            <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-gray-800 rounded-box w-52">
+                                <li>{user.displayName}</li>
+                                <li><button onClick={() => signOut(auth)} className=''>Logout</button></li>
+                            </ul>
+                        </div>
+                        :
+                        <Link to='/login' className="btn ">Login</Link>
+                    }
                 </div>
             </div>
         </div>
