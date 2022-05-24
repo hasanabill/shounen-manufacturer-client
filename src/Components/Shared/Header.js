@@ -43,6 +43,7 @@ const Header = () => {
                             </label>
                             <ul tabIndex="0" className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-slate-200 rounded-box w-52">
                                 <li>{user.displayName}</li>
+                                <li><Link to='/dashboard'>DashBoard</Link></li>
                                 <li><button onClick={() => signOut(auth)} className=''>Sign Out</button></li>
                             </ul>
                         </div>

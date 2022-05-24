@@ -27,7 +27,7 @@ const ToolDetails = () => {
                     <p className='text-xl py-2'>Tool: <span className='font-bold'>{name}</span></p>
                     <p className='text-xl py-2'>Stock: <span className='font-bold'>{available}</span></p>
                     <p className='text-xl py-2'>Minimum Order Quantity: <span className='font-bold'>{minimum}</span></p>
-                    <p className='text-xl py-2'>Price: <span className='font-bold'>{price}</span></p>
+                    <p className='text-xl py-2'>Price: <span className='font-bold'>{price}/piece</span></p>
                     <input type="number" placeholder="Type here" class="input input-bordered input-primary lg:w-1/4 max-w-xs my-2" />
                     <br />
                     <input type="submit" value="Add To Cart" class="btn btn-bordered btn-primary lg:w-1/4 max-w-xs" />

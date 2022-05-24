@@ -6,9 +6,9 @@ const Shop = () => {
     const [tools] = useTools()
     return (
         <div className='lg:mx-12'>
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-5'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 justify-items-center'>
                 {
-                    tools.slice(0, 6).map(tool => <ToolCard
+                    tools.map(tool => <ToolCard
                         key={tool._id}
                         tool={tool}
                     ></ToolCard>)

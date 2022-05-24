@@ -9,7 +9,7 @@ const useTools = () => {
             .then(data => setTools(data))
     }, [])
 
-    return [tools]
+    return [tools];
 };
 
 export default useTools;
