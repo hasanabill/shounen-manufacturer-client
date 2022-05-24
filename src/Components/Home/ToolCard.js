@@ -12,7 +12,7 @@ const ToolCard = ({ tool }) => {
                 <div className="card-body  ">
                     <h2 className="card-title">{brand}</h2>
                     <p>{name}</p>
-                    <p>Price: {price}/piece</p>
+                    <p>Price: ${price}/piece</p>
                     <p>Minimum Order: {minimum}</p>
                     <p>In Stock: {available}</p>
                     <div className="card-actions">
