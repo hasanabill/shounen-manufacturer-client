@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
+import avatar from '../../assets/images/avater.png'
 
 const Header = () => {
     const [user] = useAuthState(auth)
@@ -38,7 +39,7 @@ const Header = () => {
                         <div className="dropdown dropdown-end">
                             <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
-                                    <img src={user.photoURL} alt='' />
+                                    <img src={user.photoURL || avatar} alt='' />
                                 </div>
                             </label>
                             <ul tabIndex="0" className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-slate-200 rounded-box w-52">

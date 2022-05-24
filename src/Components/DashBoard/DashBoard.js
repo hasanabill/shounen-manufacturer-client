@@ -6,10 +6,9 @@ const DashBoard = () => {
         <div>
             <div class="drawer drawer-mobile">
                 <input id="dashboard-drawer" type="checkbox" class="drawer-toggle" />
-                <div class="drawer-content flex flex-col items-center justify-center">
-                    <Outlet></Outlet>
-                    <label for="dashboard-drawer" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
-
+                <div class="drawer-content flex flex-col ">
+                    <label for="dashboard-drawer" class="my-3 btn btn-primary text-center drawer-button lg:hidden">Open DashBoard Menu</label>
+                    <div className='my-3'><Outlet></Outlet></div>
                 </div>
                 <div class="drawer-side">
                     <label for="dashboard-drawer" class="drawer-overlay"></label>
