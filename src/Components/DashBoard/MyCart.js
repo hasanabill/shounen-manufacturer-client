@@ -8,7 +8,13 @@ const MyCart = () => {
     const [user] = useAuthState(auth)
     const email = user.email;
     const url = `http://localhost:5000/cart/${email}`
-    const { data: tools, isLoading } = useQuery('cart', () => fetch(url).then(res => res.json()))
+    const { data: tools, isLoading } = useQuery('cart', () => fetch(url, {
+        method: 'GET',
+        headers: {
+            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    })
+        .then(res => res.json()))
     if (isLoading) {
         return <Loading></Loading>
     }

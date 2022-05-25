@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import { useForm } from "react-hook-form";
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Loading from '../Shared/Loading';
+import useToken from './../../Hooks/useToken';
 
 const SignUp = () => {
     const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
@@ -16,6 +17,8 @@ const SignUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+    const [token] = useToken(user || guser)
 
     const navigate = useNavigate()
     const location = useLocation();
@@ -31,7 +34,7 @@ const SignUp = () => {
     }
 
     let from = location.state?.from?.pathname || "/";
-    if (user || guser) {
+    if (token) {
         navigate(from, { replace: true });
     }
 
@@ -41,8 +44,6 @@ const SignUp = () => {
         const password = data.password;
         await createUserWithEmailAndPassword(email, password)
         await updateProfile({ displayName: name })
-        console.log('updated')
-        // navigate('/home')
     };
 
     return (
@@ -51,6 +52,7 @@ const SignUp = () => {
                 <div className="card-body">
                     <h2 className="text-center text-primary text-2xl font-bold">Sign Up</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
+
                         {/* Name input */}
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
@@ -74,6 +76,7 @@ const SignUp = () => {
 
                             </label>
                         </div>
+
                         {/* Email input */}
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
@@ -101,6 +104,7 @@ const SignUp = () => {
 
                             </label>
                         </div>
+
                         {/* Password input */}
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
@@ -116,8 +120,8 @@ const SignUp = () => {
                                         message: 'Password is Required'
                                     },
                                     minLength: {
-                                        value: 6,
-                                        message: 'Must be 6 character or longer'
+                                        value: 8,
+                                        message: 'Must be 8 character or longer'
                                     }
                                 })}
                             />
