@@ -1,9 +1,13 @@
 import React from 'react';
 import useTools from '../../Hooks/useTools';
+import Loading from '../Shared/Loading';
 import ToolCard from './ToolCard';
 
 const Tools = () => {
-    const [tools] = useTools()
+    const [tools, isLoading] = useTools()
+    if (isLoading) {
+        return <Loading></Loading>
+    }
     return (
         <div className='m-8'>
             <h2 className='text-center text-3xl font-bold'>Tools: {tools.length}</h2>

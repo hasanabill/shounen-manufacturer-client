@@ -3,12 +3,13 @@ import { useQuery } from 'react-query';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './../../firebase.init';
 import Loading from '../Shared/Loading';
+import CartRow from './CartRow';
 
 const MyCart = () => {
     const [user] = useAuthState(auth)
     const email = user.email;
     const url = `http://localhost:5000/cart/${email}`
-    const { data: tools, isLoading } = useQuery('cart', () => fetch(url, {
+    const { data: tools, isLoading, refetch } = useQuery('cart', () => fetch(url, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -32,25 +33,17 @@ const MyCart = () => {
                             <th>Price/piece</th>
                             <th>Total</th>
                             <th>Payment</th>
+                            <th>Cancel</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            tools?.map((tool, index) => <tr key={tool._id}>
-                                <th>{index + 1}</th>
-                                <td>{tool.userName}</td>
-                                <td>{tool.toolsName.slice(0, 20)}...</td>
-                                <td>Littel, Schaden and Vandervort</td>
-                                <td>${tool.quantity}</td>
-                                <td>${tool.price}</td>
-                                <td>${tool.totalPrice}</td>
-                                {
-                                    tool.isPaid ?
-                                        <td>Paid</td>
-                                        :
-                                        <td><button className='btn btn-primary btn-xs'>Pay</button></td>
-                                }
-                            </tr>)
+                            tools?.map((tool, index) => <CartRow
+                                key={tool._id}
+                                tool={tool}
+                                index={index}
+                                refetch={refetch}
+                            ></CartRow>)
                         }
                     </tbody>
                 </table>
