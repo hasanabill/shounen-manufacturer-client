@@ -16,6 +16,8 @@ import AddTools from './Components/DashBoard/AddTools';
 import ManageOrders from './Components/DashBoard/ManageOrders';
 import ManageTools from './Components/DashBoard/ManageTools';
 import MakeAdmin from './Components/DashBoard/MakeAdmin';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -41,6 +43,18 @@ function App() {
         </Route>
         <Route path='/' ></Route>
       </Routes>
+
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 }

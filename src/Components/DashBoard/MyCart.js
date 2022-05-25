@@ -26,7 +26,7 @@ const MyCart = () => {
                         <tr>
                             <th></th>
                             <th>Name</th>
-                            <th>Job</th>
+                            <th>Name</th>
                             <th>company</th>
                             <th>Quantity</th>
                             <th>Price/piece</th>
@@ -39,11 +39,11 @@ const MyCart = () => {
                             tools.map((tool, index) => <tr>
                                 <th>{index + 1}</th>
                                 <td>{tool.userName}</td>
-                                <td>Quality Control Specialist</td>
+                                <td>{tool.toolsName.slice(0, 20)}...</td>
                                 <td>Littel, Schaden and Vandervort</td>
-                                <td>{tool.quantity}</td>
-                                <td>{tool.price}</td>
-                                <td>{tool.totalPrice}</td>
+                                <td>${tool.quantity}</td>
+                                <td>${tool.price}</td>
+                                <td>${tool.totalPrice}</td>
                                 {
                                     tool.isPaid ?
                                         <td>Paid</td>

@@ -11,7 +11,7 @@ const ToolDetails = () => {
     const { id } = useParams();
     const url = `http://localhost:5000/tool/${id}`;
 
-    const { data: tool, isLoading } = useQuery('tools', () => fetch(url)
+    const { data: tool, isLoading, refetch } = useQuery('tools', () => fetch(url)
         .then(res => res.json()))
 
     if (isLoading) {
@@ -38,6 +38,7 @@ const ToolDetails = () => {
                     <CartForm
                         key={tool._id}
                         tool={tool}
+                        refetch={refetch}
                     ></CartForm>
                 </div>
             </div>

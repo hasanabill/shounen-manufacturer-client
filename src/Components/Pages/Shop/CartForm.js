@@ -2,14 +2,13 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './../../../firebase.init';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
-const CartForm = ({ tool }) => {
+const CartForm = ({ tool, refetch }) => {
 
     const { _id, brand, name, price, minimum, available } = tool;
     const [user] = useAuthState(auth);
-    const { register, formState: { errors }, handleSubmit } = useForm();
-
-
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
         const quantity = parseInt(data.quantity)
@@ -36,29 +35,49 @@ const CartForm = ({ tool }) => {
             body: JSON.stringify(cart)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(db => {
+                if (db.acknowledged) {
+                    fetch(`http://localhost:5000/quantity/${_id}`, {
+                        method: 'PUT',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify({ available: available - quantity })
+                    })
+                        .then(res => res.json())
+                        .then(dbData => {
+                            if (dbData.acknowledged) {
+                                toast('Added to your Cart')
+                                refetch();
+                                reset();
+                            }
+                        })
+
+
+                }
+            })
     }
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control w-full max-w-xs">
                 <input
                     {...register("name")}
-                    type="text" value={user?.displayName} readOnly class="input input-bordered input-primary w-full max-w-xs my-2" />
+                    type="text" value={user?.displayName} readOnly className="input input-bordered input-primary w-full max-w-xs my-2" />
             </div>
             <div className="form-control w-full max-w-xs">
                 <input
                     {...register("email")}
-                    type="text" value={user?.email} readOnly class="input input-bordered input-primary w-full max-w-xs my-2" />
+                    type="text" value={user?.email} readOnly className="input input-bordered input-primary w-full max-w-xs my-2" />
             </div>
             <div className="form-control w-full max-w-xs">
                 <input
                     {...register("address")}
-                    type="text" placeholder="Your Address" class="input input-bordered input-primary w-full max-w-xs my-2" />
+                    type="text" placeholder="Your Address" className="input input-bordered input-primary w-full max-w-xs my-2" />
             </div>
             <div className="form-control w-full max-w-xs">
                 <input
                     {...register("phone")}
-                    type="text" placeholder="Mobile No." class="input input-bordered input-primary w-full max-w-xs my-2" />
+                    type="text" placeholder="Mobile No." className="input input-bordered input-primary w-full max-w-xs my-2" />
             </div>
             <div className="form-control w-full max-w-xs">
                 <input
@@ -72,7 +91,7 @@ const CartForm = ({ tool }) => {
                             message: `Order cannot be above what's available in stock`
                         }
                     })}
-                    type="number" placeholder="Order Amount" class="input input-bordered input-primary w-full max-w-xs my-2"
+                    type="number" placeholder="Order Amount" className="input input-bordered input-primary w-full max-w-xs my-2"
                 />
                 <label className="label">
                     {errors.quantity?.type === 'min' && <span className="label-text-alt text-red-500">{errors?.quantity?.message}</span>}
@@ -80,7 +99,7 @@ const CartForm = ({ tool }) => {
 
                 </label>
             </div>
-            <input type="submit" value="Add To Cart" class="btn btn-bordered btn-primary w-full max-w-xs my-2" />
+            <input type="submit" value="Add To Cart" className="btn btn-bordered btn-primary w-full max-w-xs my-2" />
         </form>
     );
 };
