@@ -32,7 +32,7 @@ const ManageOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            tools.map((tool, index) => <tr>
+                            tools.map((tool, index) => <tr key={tool._id}>
                                 <th>{index + 1}</th>
                                 <td>{tool.userName}</td>
                                 <td>{tool.toolsName.slice(0, 20)}...</td>

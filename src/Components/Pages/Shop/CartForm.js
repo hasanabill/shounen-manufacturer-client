@@ -82,6 +82,10 @@ const CartForm = ({ tool, refetch }) => {
             <div className="form-control w-full max-w-xs">
                 <input
                     {...register("quantity", {
+                        required: {
+                            value: true,
+                            message: 'Please Add quantity'
+                        },
                         min: {
                             value: minimum,
                             message: `Order cannot be lower than ${minimum} amount`
@@ -96,7 +100,7 @@ const CartForm = ({ tool, refetch }) => {
                 <label className="label">
                     {errors.quantity?.type === 'min' && <span className="label-text-alt text-red-500">{errors?.quantity?.message}</span>}
                     {errors.quantity?.type === 'max' && <span className="label-text-alt text-red-500">{errors?.quantity?.message}</span>}
-
+                    {errors.quantity?.type === 'required' && <span className="label-text-alt text-red-500">{errors?.quantity?.message}</span>}
                 </label>
             </div>
             <input type="submit" value="Add To Cart" className="btn btn-bordered btn-primary w-full max-w-xs my-2" />
