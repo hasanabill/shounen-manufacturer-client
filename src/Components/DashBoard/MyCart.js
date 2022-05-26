@@ -33,7 +33,7 @@ const MyCart = () => {
                             <th>Price/piece</th>
                             <th>Total</th>
                             <th>Payment</th>
-                            <th>Cancel</th>
+                            <th>Cancel / TraxId</th>
                         </tr>
                     </thead>
                     <tbody>

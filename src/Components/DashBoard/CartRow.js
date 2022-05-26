@@ -34,9 +34,14 @@ const CartRow = ({ tool, refetch, index }) => {
                     :
                     <td><Link to={`/dashboard/payment/${tool._id}`} className='btn btn-primary btn-xs'>Pay</Link></td>
             }
-            <td><button
-                onClick={() => cancelOrder(tool._id)}
-                className='btn btn-error btn-outline btn-xs'>Cancel</button></td>
+            {
+                tool.isPaid ?
+                    <td>TraxId: <span className='text-green-600'>{tool.traxId}</span></td>
+                    :
+                    <td><button
+                        onClick={() => cancelOrder(tool._id)}
+                        className='btn btn-error btn-outline btn-xs'>Cancel</button></td>
+            }
         </tr>
     );
 };

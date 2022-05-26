@@ -11,7 +11,7 @@ const CheckoutForm = ({ cartItem }) => {
     const [clientSecret, setClientSecret] = useState('');
     const [transiction, setTransiction] = useState('');
 
-    const { totalPrice, userName, email, phone } = cartItem;
+    const { _id, totalPrice, userName, email, phone } = cartItem;
 
     useEffect(() => {
         fetch(`http://localhost:5000/payment-intent`, {
@@ -74,6 +74,23 @@ const CheckoutForm = ({ cartItem }) => {
             setTransiction(paymentIntent.id)
             setSuccess('Payment Completed')
         }
+
+        const payment = {
+            orderId: _id,
+            traxId: paymentIntent.id
+        }
+        // update cart payment 
+        fetch(`http://localhost:5000/cart/${_id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            },
+            body: JSON.stringify(payment)
+        }).then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
     }
 
     return (
@@ -95,7 +112,7 @@ const CheckoutForm = ({ cartItem }) => {
                         },
                     }}
                 />
-                <button className='btn btn-success btn-sm mt-5' type="submit" disabled={!stripe || !clientSecret}>
+                <button className='btn btn-success btn-sm mt-5' type="submit" disabled={!stripe || !clientSecret || success}>
                     Pay
                 </button>
             </form>
