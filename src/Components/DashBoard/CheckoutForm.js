@@ -14,7 +14,7 @@ const CheckoutForm = ({ cartItem }) => {
     const { _id, totalPrice, userName, email, phone } = cartItem;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/payment-intent`, {
+        fetch(`https://shounen-manufacturer-13.herokuapp.com/payment-intent`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -80,7 +80,7 @@ const CheckoutForm = ({ cartItem }) => {
             traxId: paymentIntent.id
         }
         // update cart payment 
-        fetch(`http://localhost:5000/cart/${_id}`, {
+        fetch(`https://shounen-manufacturer-13.herokuapp.com/cart/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',

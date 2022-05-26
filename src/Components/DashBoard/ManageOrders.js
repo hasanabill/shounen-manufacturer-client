@@ -27,7 +27,7 @@ const ManageOrders = () => {
                             <th>Quantity</th>
                             <th>Price/piece</th>
                             <th>Total</th>
-                            <th>Payment</th>
+                            <th>Delivery</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,9 +42,9 @@ const ManageOrders = () => {
                                 <td>${tool.totalPrice}</td>
                                 {
                                     tool.isPaid ?
-                                        <td>Paid</td>
+                                        <td>delivered</td>
                                         :
-                                        <td><button className='btn btn-primary btn-xs'>Pay</button></td>
+                                        <td><button className='btn btn-primary btn-xs'>Deliver</button></td>
                                 }
                             </tr>)
                         }

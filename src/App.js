@@ -21,6 +21,8 @@ import { ToastContainer } from 'react-toastify';
 import RequireAdmin from './Components/Login/RequireAdmin';
 import Footer from './Components/Shared/Footer';
 import Payment from './Components/DashBoard/Payment';
+import Portfolio from './Components/Pages/Portfolio/Portfolio';
+import NotFound from './Components/Shared/NotFound';
 
 function App() {
   return (
@@ -31,6 +33,7 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/shop' element={<Shop></Shop>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>} ></Route>
         <Route path='/purchase/:id' element={<RequiredAuth><ToolDetails></ToolDetails></RequiredAuth>} ></Route>
@@ -45,7 +48,7 @@ function App() {
           <Route path='managetools' element={<RequireAdmin><ManageTools></ManageTools></RequireAdmin>} ></Route>
           <Route path='makeadmin' element={<RequireAdmin><MakeAdmin></MakeAdmin></RequireAdmin>} ></Route>
         </Route>
-        <Route path='/' ></Route>
+        <Route path='*' element={<NotFound></NotFound>} ></Route>
       </Routes>
 
       <Footer></Footer>
