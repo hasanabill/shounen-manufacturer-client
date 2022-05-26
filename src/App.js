@@ -20,6 +20,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import RequireAdmin from './Components/Login/RequireAdmin';
 import Footer from './Components/Shared/Footer';
+import Payment from './Components/DashBoard/Payment';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path='/dashboard' element={<RequiredAuth><DashBoard></DashBoard></RequiredAuth>} >
           <Route index element={<MyProfie></MyProfie>}></Route>
           <Route path='cart' element={<MyCart></MyCart>}></Route>
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
           <Route path='addreview' element={<AddReview></AddReview>} ></Route>
           <Route path='addtool' element={<RequireAdmin><AddTools></AddTools></RequireAdmin>}></Route>
           <Route path='manageorder' element={<RequireAdmin><ManageOrders></ManageOrders></RequireAdmin>} ></Route>

@@ -40,7 +40,6 @@ const Login = () => {
         const email = data.email;
         const password = data.password;
         signInWithEmailAndPassword(email, password)
-        navigate('/home')
     };
 
     return (

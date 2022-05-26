@@ -1,5 +1,6 @@
 import React from 'react';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 const CartRow = ({ tool, refetch, index }) => {
 
@@ -31,7 +32,7 @@ const CartRow = ({ tool, refetch, index }) => {
                 tool.isPaid ?
                     <td>Paid</td>
                     :
-                    <td><button className='btn btn-primary btn-xs'>Pay</button></td>
+                    <td><Link to={`/dashboard/payment/${tool._id}`} className='btn btn-primary btn-xs'>Pay</Link></td>
             }
             <td><button
                 onClick={() => cancelOrder(tool._id)}
