@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import Loading from '../../Shared/Loading';
@@ -10,9 +10,12 @@ const ToolDetails = () => {
 
     const { id } = useParams();
     const url = `http://localhost:5000/tool/${id}`;
+    const [tool, setTool] = useState({})
 
-    const { data: tool, isLoading, refetch } = useQuery('tools', () => fetch(url)
-        .then(res => res.json()))
+    const { isLoading, refetch } = useQuery('tools', () => fetch(url)
+        .then(res => res.json())
+        .then(data => setTool(data))
+    )
 
     if (isLoading) {
         return <Loading></Loading>

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Loading from '../Shared/Loading';
-import useTools from './../../Hooks/useTools';
 import ToolRow from './ToolRow';
+import { useQuery } from 'react-query';
 
 const ManageTools = () => {
-    const [tools, isLoading, refetch] = useTools()
+    const [tools, setTools] = useState([])
+
+    const { isLoading, refetch } = useQuery('tools', () => fetch('http://localhost:5000/tools').then(res => res.json()).then(data => setTools(data)))
     if (isLoading) {
         return <Loading></Loading>
     }

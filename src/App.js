@@ -19,6 +19,7 @@ import MakeAdmin from './Components/DashBoard/MakeAdmin';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import RequireAdmin from './Components/Login/RequireAdmin';
+import Footer from './Components/Shared/Footer';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
         <Route path='/' ></Route>
       </Routes>
 
+      <Footer></Footer>
       <ToastContainer
         position="top-center"
         autoClose={5000}

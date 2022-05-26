@@ -1,7 +1,7 @@
 import React from 'react';
 import avatar from '../../assets/images/avater.png'
 
-const ReviewCard = ({ review: rev }) => {
+const ReviewCard = ({ rev }) => {
     const { username, img, review } = rev;
     return (
         <div class="card w-96 bg-base-100 shadow-xl">
