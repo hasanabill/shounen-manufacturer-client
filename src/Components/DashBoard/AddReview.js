@@ -14,7 +14,7 @@ const AddReview = () => {
             img: user?.photoURL,
             review: data.review
         }
-        fetch('http://localhost:5000/review', {
+        fetch('https://shounen-manufacturer-13.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -32,17 +32,17 @@ const AddReview = () => {
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div class="form-control w-full max-w-sm">
-                    <label class="label">
-                        <span class="label-text">Your Name</span>
+                <div className="form-control w-full max-w-sm">
+                    <label className="label">
+                        <span className="label-text">Your Name</span>
                     </label>
                     <input
                         {...register('username')}
-                        type="text" value={user?.displayName} readOnly class="input input-bordered w-full max-w-sm" />
+                        type="text" value={user?.displayName} readOnly className="input input-bordered w-full max-w-sm" />
                 </div>
-                <div class="form-control">
-                    <label class="label">
-                        <span class="label-text">Your Review</span>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Your Review</span>
                     </label>
                     <textarea
                         {...register('review', {
@@ -51,8 +51,8 @@ const AddReview = () => {
                                 message: 'Write your review first'
                             }
                         })}
-                        class="textarea max-w-sm textarea-bordered h-24" placeholder="Add your Review"></textarea>
-                    <label class="label">
+                        className="textarea max-w-sm textarea-bordered h-24" placeholder="Add your Review"></textarea>
+                    <label className="label">
                         {errors.review?.type === 'required' && <span className="label-text-alt text-red-500">{errors?.review?.message}</span>}
                     </label>
                 </div>

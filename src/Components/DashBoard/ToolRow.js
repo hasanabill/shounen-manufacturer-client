@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const ToolRow = ({ tool, index, refetch }) => {
     const { _id, img, brand, name, available } = tool;
     const handleDeleteTool = id => {
-        fetch(`http://localhost:5000/tool/${id}`, {
+        fetch(`https://shounen-manufacturer-13.herokuapp.com/tool/${id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -22,8 +22,8 @@ const ToolRow = ({ tool, index, refetch }) => {
         <tr>
             <th>{index + 1}</th>
             <td>
-                <div class="avatar">
-                    <div class="w-16 rounded">
+                <div className="avatar">
+                    <div className="w-16 rounded">
                         <img src={img} alt={name} />
                     </div>
                 </div>

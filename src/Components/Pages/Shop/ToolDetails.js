@@ -9,7 +9,7 @@ const ToolDetails = () => {
 
 
     const { id } = useParams();
-    const url = `http://localhost:5000/tool/${id}`;
+    const url = `https://shounen-manufacturer-13.herokuapp.com/tool/${id}`;
     const [tool, setTool] = useState({})
 
     const { isLoading, refetch } = useQuery('tools', () => fetch(url)
@@ -24,20 +24,20 @@ const ToolDetails = () => {
 
     return (
         <>
-            <div class="flex flex-col w-full lg:flex-row my-20">
-                <div class="grid flex-grow lg:w-1/2 card rounded-box place-items-center">
+            <div className="flex flex-col w-full lg:flex-row my-20">
+                <div className="grid flex-grow lg:w-1/2 card rounded-box place-items-center">
                     <img src={img} alt="" />
                 </div>
-                <div class="divider lg:divider-horizontal"></div>
-                <div class="p-10 lg:w-1/2">
+                <div className="divider lg:divider-horizontal"></div>
+                <div className="p-10 lg:w-1/2">
                     <p className='text-3xl py-2'>Brand: <span className='font-bold'>{brand}</span></p>
                     <p className='text-xl py-2'>Tool: <span className='font-bold'>{name}</span></p>
                     <p className='text-xl py-2'>Stock: <span className='font-bold'>{available}</span></p>
                     <p className='text-xl py-2'>Minimum Order Quantity: <span className='font-bold'>{minimum}</span></p>
                     <p className='text-xl py-2'>Price: <span className='font-bold'>${price}/piece</span></p>
                 </div>
-                <div class="divider lg:divider-horizontal"></div>
-                <div class="p-10 lg:w-1/2">
+                <div className="divider lg:divider-horizontal"></div>
+                <div className="p-10 lg:w-1/2">
                     <CartForm
                         key={tool._id}
                         tool={tool}

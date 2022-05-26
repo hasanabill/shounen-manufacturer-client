@@ -28,7 +28,7 @@ const AddTools = () => {
                         img
                     }
 
-                    fetch(`http://localhost:5000/tool`, {
+                    fetch(`https://shounen-manufacturer-13.herokuapp.com/tool`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

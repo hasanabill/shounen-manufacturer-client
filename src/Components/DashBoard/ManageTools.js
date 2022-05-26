@@ -6,14 +6,14 @@ import { useQuery } from 'react-query';
 const ManageTools = () => {
     const [tools, setTools] = useState([])
 
-    const { isLoading, refetch } = useQuery('tools', () => fetch('http://localhost:5000/tools').then(res => res.json()).then(data => setTools(data)))
+    const { isLoading, refetch } = useQuery('tools', () => fetch('https://shounen-manufacturer-13.herokuapp.com/tools').then(res => res.json()).then(data => setTools(data)))
     if (isLoading) {
         return <Loading></Loading>
     }
     return (
         <div>
-            <div class="overflow-x-auto">
-                <table class="table table-zebra w-full">
+            <div className="overflow-x-auto">
+                <table className="table table-zebra w-full">
                     <thead>
                         <tr>
                             <th>#</th>

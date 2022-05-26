@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const CartRow = ({ tool, refetch, index }) => {
 
     const cancelOrder = id => {
-        fetch(`http://localhost:5000/cart/${id}`, {
+        fetch(`https://shounen-manufacturer-13.herokuapp.com/cart/${id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

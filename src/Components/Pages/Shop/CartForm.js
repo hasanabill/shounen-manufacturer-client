@@ -27,7 +27,7 @@ const CartForm = ({ tool, refetch }) => {
             isPaid: false
         };
 
-        fetch('http://localhost:5000/cart', {
+        fetch('https://shounen-manufacturer-13.herokuapp.com/cart', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -37,7 +37,7 @@ const CartForm = ({ tool, refetch }) => {
             .then(res => res.json())
             .then(db => {
                 if (db.acknowledged) {
-                    fetch(`http://localhost:5000/quantity/${_id}`, {
+                    fetch(`https://shounen-manufacturer-13.herokuapp.com/quantity/${_id}`, {
                         method: 'PUT',
                         headers: {
                             'content-type': 'application/json'

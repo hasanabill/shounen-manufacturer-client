@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import Loading from './../Shared/Loading';
 
 const ManageOrders = () => {
-    const url = `http://localhost:5000/orders`
+    const url = `https://shounen-manufacturer-13.herokuapp.com/orders`
     const { data: tools, isLoading } = useQuery('cart', () => fetch(url, {
         method: 'GET',
         headers: {
@@ -16,8 +16,8 @@ const ManageOrders = () => {
     }
     return (
         <div>
-            <div class="overflow-x-auto">
-                <table class="table table-compact w-full">
+            <div className="overflow-x-auto">
+                <table className="table table-compact w-full">
                     <thead>
                         <tr>
                             <th></th>

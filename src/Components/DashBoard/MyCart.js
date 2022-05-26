@@ -8,7 +8,7 @@ import CartRow from './CartRow';
 const MyCart = () => {
     const [user] = useAuthState(auth)
     const email = user.email;
-    const url = `http://localhost:5000/cart/${email}`
+    const url = `https://shounen-manufacturer-13.herokuapp.com/cart/${email}`
     const { data: tools, isLoading, refetch } = useQuery('cart', () => fetch(url, {
         method: 'GET',
         headers: {
@@ -21,8 +21,8 @@ const MyCart = () => {
     }
     return (
         <div>
-            <div class="overflow-x-auto">
-                <table class="table table-compact w-full">
+            <div className="overflow-x-auto">
+                <table className="table table-compact w-full">
                     <thead>
                         <tr>
                             <th></th>
