@@ -1,3 +1,27 @@
+# Shounen Manufacturer
+## Checkout the website [here](https://shounen-manufacturer.web.app/)
+This website is for a industrial factory which sells it's tools to small or big businesses.
+
+### Features
+* Single Page Application
+* Google Sign In
+* Dashboard
+* Adding a product to database
+* Managing product
+* Admin Role
+* Payment Intregation
+
+### Tools used
+* React JS
+* React Router
+* Firebase Authentication
+* React Bootstrap
+* React Firebase Hook
+* React hook form
+* MongoDB
+* Node js
+* Express Js
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

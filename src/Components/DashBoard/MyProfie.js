@@ -41,8 +41,8 @@ const MyProfie = () => {
             })
     }
     return (
-        <div class="flex flex-col w-full lg:flex-row">
-            <div class="grid flex-grow  card  rounded-box items-center">
+        <div className="flex flex-col w-full lg:flex-row">
+            <div className="grid flex-grow  card  rounded-box items-center">
                 <form className='flex flex-col justify-center items-center '>
                     <h1 className="text-3xl text-primary text-center my-3">Your Profile</h1>
                     <div className="form-control w-full max-w-xs">
@@ -91,11 +91,11 @@ const MyProfie = () => {
                 </form>
             </div>
 
-            <div class="divider lg:divider-horizontal"></div>
+            <div className="divider lg:divider-horizontal"></div>
 
-            <div class="grid flex-grow  card  rounded-box items-center">
+            <div className="grid flex-grow  card  rounded-box items-center">
                 <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col justify-center items-center '>
-                    <h1 className="text-3xl text-primary text-center my-3">Your Profile</h1>
+                    <h1 className="text-3xl text-primary text-center my-3">Update Your Profile</h1>
                     <div className="form-control w-full max-w-xs">
                         <input
                             {...register("name")}

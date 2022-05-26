@@ -13,8 +13,8 @@ const Portfolio = () => {
                     <h2 className="text-center text-2xl font-bold">I am currently studying at Daffodil International University. I am pursuing my graduation in Computer and Information System as a Bachelor Degree</h2>
                 </div>
                 <p className='text-center text-3xl my-10 text-primary'>My skills as a web developer</p>
-                <div class="flex justify-center">
-                    <table class="table w-1/2">
+                <div className="flex justify-center">
+                    <table className="table w-1/2">
                         <thead>
                             <tr>
                                 <th>FrontEnd</th>
@@ -60,30 +60,30 @@ const Portfolio = () => {
 
                         {/* greensports */}
                         {/* https://green-sports-18e07.web.app/ */}
-                        <div class="card w-96 bg-base-100 shadow-xl">
-                            <div class="card-body">
-                                <h2 class="card-title text-3xl font-bold">Isekai Inventory</h2>
+                        <div className="card w-96 bg-base-100 shadow-xl">
+                            <div className="card-body">
+                                <h2 className="card-title text-3xl font-bold">Isekai Inventory</h2>
                                 <p className='font-bold'>Inventory management system</p>
-                                <div class="card-actions justify-end">
-                                    <a href="https://isekai-inventory.web.app/" target={"_blank"}><button class="btn btn-primary">Live site</button></a>
+                                <div className="card-actions justify-end">
+                                    <a href="https://isekai-inventory.web.app/" target={"_blank"}><button className="btn btn-primary">Live site</button></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="card w-96 bg-base-100 shadow-xl">
-                            <div class="card-body">
-                                <h2 class="card-title text-3xl font-bold">Binarry Photography</h2>
+                        <div className="card w-96 bg-base-100 shadow-xl">
+                            <div className="card-body">
+                                <h2 className="card-title text-3xl font-bold">Binarry Photography</h2>
                                 <p className='font-bold'>Explore amazing gallary of this photography team</p>
-                                <div class="card-actions justify-end">
-                                    <a href="https://binnary-photography.web.app/" target={"_blank"}><button class="btn btn-primary">Live site</button></a>
+                                <div className="card-actions justify-end">
+                                    <a href="https://binnary-photography.web.app/" target={"_blank"}><button className="btn btn-primary">Live site</button></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="card w-96 bg-base-100 shadow-xl">
-                            <div class="card-body">
-                                <h2 class="card-title text-3xl font-bold">Mac Studio Review</h2>
+                        <div className="card w-96 bg-base-100 shadow-xl">
+                            <div className="card-body">
+                                <h2 className="card-title text-3xl font-bold">Mac Studio Review</h2>
                                 <p className='font-bold'>The most powerful small computer</p>
-                                <div class="card-actions justify-end">
-                                    <a href="https://mac-studio.netlify.app/" target={"_blank"}><button class="btn btn-primary">Live site</button></a>
+                                <div className="card-actions justify-end">
+                                    <a href="https://mac-studio.netlify.app/" target={"_blank"}><button className="btn btn-primary">Live site</button></a>
                                 </div>
                             </div>
                         </div>

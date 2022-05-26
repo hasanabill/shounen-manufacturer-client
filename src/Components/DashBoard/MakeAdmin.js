@@ -2,15 +2,18 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
 import UserRow from './UserRow';
+import { useState } from 'react';
 
 const MakeAdmin = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://shounen-manufacturer-13.herokuapp.com/users', {
+    const [users, setUsers] = useState([])
+    const { isLoading, refetch } = useQuery('users', () => fetch('https://shounen-manufacturer-13.herokuapp.com/users', {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
         }
-
-    }).then(res => res.json()))
+    })
+        .then(res => res.json())
+        .then(data => setUsers(data)))
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -31,7 +34,7 @@ const MakeAdmin = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map((user, index) => <UserRow
+                            users?.map((user, index) => <UserRow
                                 key={user._id}
                                 user={user}
                                 index={index}

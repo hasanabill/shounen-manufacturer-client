@@ -49,8 +49,8 @@ const Chart = () => {
     return (
         <div className='mx-10'>
             <h1 className='text-3xl text-center my-5 font-bold text-primary'>Recent activity chart</h1>
-            <div class="flex flex-col  lg:flex-row">
-                <div class="grid flex-grow card rounded-box lg:place-items-center">
+            <div className="flex flex-col  lg:flex-row">
+                <div className="grid flex-grow card rounded-box lg:place-items-center">
                     <LineChart
                         width={500}
                         height={300}
@@ -71,8 +71,8 @@ const Chart = () => {
                         <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
                     </LineChart>
                 </div>
-                <div class="divider lg:divider-horizontal"></div>
-                <div class="grid flex-grow card rounded-box lg:place-items-center">
+                <div className="divider lg:divider-horizontal"></div>
+                <div className="grid flex-grow card rounded-box lg:place-items-center">
                     <ComposedChart
                         width={500}
                         height={400}
