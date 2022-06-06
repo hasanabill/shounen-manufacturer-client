@@ -6,7 +6,7 @@ const Portfolio = () => {
             <div className='mx-28 my-16'>
                 <div className='my-16'>
                     <h3 className="text-5xl font-bold  text-center my-3 text-primary">A few words about me</h3>
-                    <h2 className='text-3xl text-center font-bold'>I'm <b>Jahid Hassan</b>, a multidisciplinary developer and designer who focuses on telling my clients' stories visually, through enjoyable and meaningful experiences. I specialize in responsive react js SPA and unique user interfaces.</h2>
+                    <h2 className='text-3xl text-center font-bold'>I'm <b>Mahmudul Hasan Anabil</b>, a multidisciplinary developer and designer who focuses on telling my clients' stories visually, through enjoyable and meaningful experiences. I specialize in responsive react js SPA and unique user interfaces.</h2>
                 </div>
                 <div className='my-16'>
                     <p className='text-center text-xl text-primary'>Current education</p>
