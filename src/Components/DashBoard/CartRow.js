@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const CartRow = ({ tool, refetch, index }) => {
 
     const cancelOrder = id => {
-        fetch(`https://shounen-manufacturer-13.herokuapp.com/cart/${id}`, {
+        fetch(`https://shounen-manufacturer-server.vercel.app/cart/${id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

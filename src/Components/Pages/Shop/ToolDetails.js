@@ -9,7 +9,7 @@ const ToolDetails = () => {
 
 
     const { id } = useParams();
-    const url = `https://shounen-manufacturer-13.herokuapp.com/tool/${id}`;
+    const url = `https://shounen-manufacturer-server.vercel.app/tool/${id}`;
     const [tool, setTool] = useState({})
 
     const { isLoading, refetch } = useQuery('tools', () => fetch(url)

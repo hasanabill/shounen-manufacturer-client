@@ -5,7 +5,7 @@ import { useState } from 'react';
 const useTools = () => {
     const [tools, setTools] = useState([])
 
-    const { isLoading, refetch } = useQuery('tools', () => fetch('https://shounen-manufacturer-13.herokuapp.com/tools').then(res => res.json()).then(data => setTools(data)))
+    const { isLoading, refetch } = useQuery('tools', () => fetch('https://shounen-manufacturer-server.vercel.app/tools').then(res => res.json()).then(data => setTools(data)))
 
     return [tools, isLoading, refetch];
 };

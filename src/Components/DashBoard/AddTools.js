@@ -28,7 +28,7 @@ const AddTools = () => {
                         img
                     }
 
-                    fetch(`https://shounen-manufacturer-13.herokuapp.com/tool`, {
+                    fetch(`https://shounen-manufacturer-server.vercel.app/tool`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
