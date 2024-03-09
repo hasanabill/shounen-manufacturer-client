@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const ToolRow = ({ tool, index, refetch }) => {
     const { _id, img, brand, name, available } = tool;
     const handleDeleteTool = id => {
-        fetch(`https://shounen-manufacturer-server.vercel.app/tool/${id}`, {
+        fetch(`https://shounen-manufacturer-server.onrender.com/tool/${id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

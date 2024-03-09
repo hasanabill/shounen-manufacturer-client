@@ -8,7 +8,7 @@ import CartRow from './CartRow';
 const MyCart = () => {
     const [user] = useAuthState(auth)
     const email = user.email;
-    const url = `https://shounen-manufacturer-server.vercel.app/cart/${email}`
+    const url = `https://shounen-manufacturer-server.onrender.com/cart/${email}`
     const { data: tools, isLoading, refetch } = useQuery('cart', () => fetch(url, {
         method: 'GET',
         headers: {

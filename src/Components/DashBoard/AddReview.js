@@ -14,7 +14,7 @@ const AddReview = () => {
             img: user?.photoURL,
             review: data.review
         }
-        fetch('https://shounen-manufacturer-server.vercel.app/review', {
+        fetch('https://shounen-manufacturer-server.onrender.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

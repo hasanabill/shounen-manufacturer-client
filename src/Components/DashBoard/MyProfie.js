@@ -11,7 +11,7 @@ const MyProfie = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const email = user?.email;
 
-    const { data: dbUser, isLoading, refetch } = useQuery('users', () => fetch(`https://shounen-manufacturer-server.vercel.app/user/${email}`, {
+    const { data: dbUser, isLoading, refetch } = useQuery('users', () => fetch(`https://shounen-manufacturer-server.onrender.com/user/:${email}`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -23,7 +23,7 @@ const MyProfie = () => {
     }
 
     const onSubmit = data => {
-        fetch(`https://shounen-manufacturer-server.vercel.app/user/${email}`, {
+        fetch(`https://shounen-manufacturer-server.onrender.com/user/${email}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

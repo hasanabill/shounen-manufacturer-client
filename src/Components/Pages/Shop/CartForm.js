@@ -27,7 +27,7 @@ const CartForm = ({ tool, refetch }) => {
             isPaid: false
         };
 
-        fetch('https://shounen-manufacturer-server.vercel.app/cart', {
+        fetch('https://shounen-manufacturer-server.onrender.com/cart', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -37,7 +37,7 @@ const CartForm = ({ tool, refetch }) => {
             .then(res => res.json())
             .then(db => {
                 if (db.acknowledged) {
-                    fetch(`https://shounen-manufacturer-server.vercel.app/quantity/${_id}`, {
+                    fetch(`https://shounen-manufacturer-server.onrender.com/quantity/${_id}`, {
                         method: 'PUT',
                         headers: {
                             'content-type': 'application/json'

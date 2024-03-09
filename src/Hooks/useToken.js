@@ -7,7 +7,7 @@ const useToken = user => {
         const email = user?.user?.email;
         const currentUser = { email }
         if (email) {
-            fetch(`https://shounen-manufacturer-server.vercel.app/user/${email}`, {
+            fetch(`https://shounen-manufacturer-server.onrender.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

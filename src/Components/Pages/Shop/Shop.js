@@ -6,7 +6,7 @@ import ToolCard from './../../Home/ToolCard';
 const Shop = () => {
     const [tools, setTools] = useState([])
 
-    const { isLoading } = useQuery('tools', () => fetch('https://shounen-manufacturer-server.vercel.app/tools').then(res => res.json()).then(data => setTools(data)))
+    const { isLoading } = useQuery('tools', () => fetch('https://shounen-manufacturer-server.onrender.com/tools').then(res => res.json()).then(data => setTools(data)))
     if (isLoading) {
         return <Loading></Loading>
     }

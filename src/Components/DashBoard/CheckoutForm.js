@@ -14,7 +14,7 @@ const CheckoutForm = ({ cartItem }) => {
     const { _id, totalPrice, userName, email, phone } = cartItem;
 
     useEffect(() => {
-        fetch(`https://shounen-manufacturer-server.vercel.app/payment-intent`, {
+        fetch(`https://shounen-manufacturer-server.onrender.com/payment-intent`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -80,7 +80,7 @@ const CheckoutForm = ({ cartItem }) => {
             traxId: paymentIntent.id
         }
         // update cart payment 
-        fetch(`https://shounen-manufacturer-server.vercel.app/cart/${_id}`, {
+        fetch(`https://shounen-manufacturer-server.onrender.com/cart/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',

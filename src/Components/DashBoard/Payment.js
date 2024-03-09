@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_51L1iSLIOOXdauHLGUW2zSFSUq4WF6jqUkSiKw
 
 const Payment = () => {
     const { id } = useParams()
-    const url = `https://shounen-manufacturer-server.vercel.app/carts/${id}`
+    const url = `https://shounen-manufacturer-server.onrender.com/carts/${id}`
 
     const { data: cartItem, isLoading } = useQuery(['cartsItem', id], () => fetch(url, {
         method: 'GET',

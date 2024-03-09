@@ -5,7 +5,7 @@ import ReviewCard from './ReviewCard';
 
 const Review = () => {
 
-    const { data: reviews, isLoading } = useQuery('review', () => fetch('https://shounen-manufacturer-server.vercel.app/review').then(res => res.json()))
+    const { data: reviews, isLoading } = useQuery('review', () => fetch('https://shounen-manufacturer-server.onrender.com/review').then(res => res.json()))
     if (isLoading) {
         return <Loading></Loading>
     }

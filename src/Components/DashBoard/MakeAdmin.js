@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 const MakeAdmin = () => {
     const [users, setUsers] = useState([])
-    const { isLoading, refetch } = useQuery('users', () => fetch('https://shounen-manufacturer-server.vercel.app/users', {
+    const { isLoading, refetch } = useQuery('users', () => fetch('https://shounen-manufacturer-server.onrender.com/users', {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

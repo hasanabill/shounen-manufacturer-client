@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import Loading from './../Shared/Loading';
 
 const ManageOrders = () => {
-    const url = `https://shounen-manufacturer-server.vercel.app/orders`
+    const url = `https://shounen-manufacturer-server.onrender.com/orders`
     const { data: tools, isLoading } = useQuery('cart', () => fetch(url, {
         method: 'GET',
         headers: {

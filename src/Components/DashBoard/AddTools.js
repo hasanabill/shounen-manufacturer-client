@@ -28,7 +28,7 @@ const AddTools = () => {
                         img
                     }
 
-                    fetch(`https://shounen-manufacturer-server.vercel.app/tool`, {
+                    fetch(`https://shounen-manufacturer-server.onrender.com/tool`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
